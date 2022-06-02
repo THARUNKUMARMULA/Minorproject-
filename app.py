@@ -25,14 +25,15 @@ def result():
 
     X= np.array([[ item_weight,item_fat_content,item_visibility,item_type,item_mrp,
                   outlet_establishment_year,outlet_size,outlet_location_type,outlet_type ]])
-
-    scaler_path= r'D:\MINOR\New folder\BigMart-Sales-Prediction-With-Deployment-main\models\sc.sav'
+    path=os.getcwd()
+    scaler_path= path+'\models\sc.sav'
 
     sc=joblib.load(scaler_path)
 
     X_std= sc.transform(X)
+    path=os.getcwd()
 
-    model_path=r'D:\MINOR\New folder\BigMart-Sales-Prediction-With-Deployment-main\models\lr.sav'
+    model_path= path+'\models\lr.sav'
 
     model= joblib.load(model_path)
 
